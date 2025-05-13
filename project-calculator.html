@@ -4,10 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Quote Calculator</title>
+  <link rel="stylesheet" href="assets/style/global.css" />
+  <link rel="stylesheet" href="assets/style/calcualtor.css" />
+  <script src="services/global.js" defer></script>
+  <script src="services/calculator.js" defer></script>
 </head>
 <body>
-  <header></header>
-  <main></main>
-  <footer></footer>
+  <div class="page-container">
+  <header>
+   <nav class="navbar">
+      <h1 class="logo">Yuval Lankry</h1>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="project-calculator.html" class="active">Project Calculator</a></li>
+      </ul>
+    </nav> 
+  </header>
+
+  <main>
+    <section class="calculator-section">
+      <h2>Website Price Quote Calculator</h2>
+      <form id="priceForm">
+        <label for="siteType">Website Type:</label>
+        <select id="siteType" required>
+          <option value="">-- Select --</option>
+          <option value="business">Business Site - 1000₪</option>
+          <option value="store">Online Store - 2000₪</option>
+          <option value="blog">Blog - 1500₪</option>
+        </select>
+
+        <label for="numPages">Number of Pages (1-10):</label>
+        <input type="number" id="numPages" min="1" max="10" required />
+
+        <label for="customDesign">Custom Design Required?</label>
+        <select id="customDesign" required>
+          <option value="">-- Select --</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+          
+        <div class="buttons">
+          <button type="button" onclick="calculatePrice()">Calculate Price</button>
+          <button onclick="resetForm()">Reset</button>
+        </div>
+      </form>
+
+      <div id="result"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Yuval Lankry. All rights reserved.</p>
+  </footer>
 </body>
 </html>
