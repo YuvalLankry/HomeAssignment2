@@ -13,7 +13,12 @@
   
   .skills-list,
   .experience {
-    margin-bottom: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease;
   }
   
   .skills-list h3,
@@ -34,6 +39,11 @@
     margin-bottom: 0.75rem;
     font-size: 1.1rem;
   }
+
+  .skills-list:hover,
+.experience:hover {
+  transform: translateY(-4px);
+}
   
   @media screen and (max-width: 768px) {
   .skills-section {
